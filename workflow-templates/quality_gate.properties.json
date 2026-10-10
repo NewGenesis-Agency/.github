@@ -1,0 +1,7 @@
+{
+  "name": "NewGenesis quality gate",
+  "description": "Runs npm run check on every pull request.",
+  "iconName": "octicon check",
+  "categories": ["JavaScript", "TypeScript"],
+  "filePatterns": ["package.json$"]
+}

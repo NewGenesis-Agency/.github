@@ -1,0 +1,30 @@
+name: Bug
+description: Something does not work as expected.
+title: "[Bug] "
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happens
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. ...\n2. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      description: Example "Chrome 130, iPhone 15".
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshot or console output
