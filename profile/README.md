@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/NewGenesis-Agency/.github/main/profile/logo.png" alt="NewGenesis" width="320">
+</p>
+
 # NewGenesis
 
 NewGenesis is a web and motion design agency in Lyon, France.
