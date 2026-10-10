@@ -1,0 +1,15 @@
+# @file quality_gate.yml
+# @brief Caller of the organisation's reusable quality gate, run on pull requests.
+# @author NewGenesis, web and motion design agency (https://newgenesis.ai)
+
+name: Quality gate
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    uses: NewGenesis-Agency/.github/.github/workflows/quality_gate.yml@main

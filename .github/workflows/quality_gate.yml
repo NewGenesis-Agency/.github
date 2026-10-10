@@ -1,0 +1,51 @@
+# @file quality_gate.yml
+# @brief Reusable quality gate: installs dependencies and runs `npm run check`.
+# @author NewGenesis, web and motion design agency (https://newgenesis.ai)
+#
+# Why: every client repository enforces the same gate locally with its pre-push hook. Private
+# repositories on the free plan cannot enforce branch protection, so this workflow is a
+# visible signal on each pull request, not a lock. It costs Actions minutes (2 000 a month on
+# the free plan), so call it on pull requests only, not on every branch push.
+#
+# Call it from a repository with the caller template in `workflow-templates/`.
+
+name: Quality gate
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: Node.js major version.
+        type: string
+        default: "22"
+      working-directory:
+        description: Folder that holds package.json.
+        type: string
+        default: "."
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+          cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run the quality gate
+        run: npm run check

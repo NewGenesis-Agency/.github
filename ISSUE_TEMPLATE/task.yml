@@ -1,0 +1,54 @@
+name: Task
+description: A piece of work with an owner, a pair, a checklist and proof.
+title: "[Task] "
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What
+      description: One sentence describing an observable result.
+    validations:
+      required: true
+  - type: input
+    id: who
+    attributes:
+      label: Who
+      description: Two people minimum, one named owner. Example "Mic (owner) and Flo".
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Repository, folder, file, tool or mailbox.
+    validations:
+      required: true
+  - type: textarea
+    id: done_means
+    attributes:
+      label: Done means
+      description: A short checklist anyone can verify.
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: Proof
+      description: What to attach (link, screenshot, pull request) and who validates it.
+    validations:
+      required: true
+  - type: input
+    id: xp
+    attributes:
+      label: XP
+      description: From the catalogue, never invented. 100 XP is about one hour.
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+  - type: input
+    id: backup
+    attributes:
+      label: Backup task
+      description: What to do when blocked.
