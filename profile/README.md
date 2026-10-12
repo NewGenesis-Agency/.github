@@ -4,10 +4,10 @@
 
 # NewGenesis
 
-NewGenesis is a web and motion design agency in Lyon, France.
+NewGenesis is a web agency in Lyon, France.
 
-We design and build fast, accessible and immersive websites, and the tools around them,
-for local businesses.
+We create showcase and immersive websites for craftsmen and shops of the Lyon area: carefully designed,
+simple to edit yourself, and prepared to be read and understood by Google and AI assistants.
 
 - Website: https://newgenesis.ai
 - Work: modern showcase sites and immersive experiences with motion design, online booking,
